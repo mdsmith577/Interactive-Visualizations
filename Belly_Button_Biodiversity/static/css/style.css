@@ -1,15 +1,19 @@
   html,
   body {
     height: 100%;
-    /* width: 100%; */
+    width: 100%;
     padding: 0;
     margin: 0;
-    background: #93979cdc;
+    background: #74a6e6dc;
     text-align: center;
     margin-top: -5px;
   }
 
-
+  /* h5 {
+    font-weight: bold;
+    color: #337ab7;
+    font-size: 40%;
+  } */
 
   /* #panel-heading {
     margin-top: 30px;
@@ -23,7 +27,8 @@
   }
 
 
-  #pie {
+
+  .pie {
     border:1px solid transparent;
     border-radius:4;
     -webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);
@@ -32,18 +37,36 @@
     display: inline-block;
   }
 
+  .col-md-3 {
+    padding-left: 0px;
+  }
 
 
+  .col-md-9 {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  }
 
-  #bubble {
+
+  .main-svg {
+    /* height: 100%; */
+    width:100%;
+  }
+
+  
+  .svg-container {
+    width:100%;
+  }
+
+  .bubble {
     margin-top: 15px;
-    /* background: #2a2a7e;
-    height: 630px;
-    width: 1230px; */
-    text-align: center;
-    display: inline-block;
     border:1px solid transparent;
     border-radius:4;
     -webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);
     box-shadow:0 1px 1px rgba(0,0,0,.05);
+    text-align: center;
+    display: inline-block;
   }

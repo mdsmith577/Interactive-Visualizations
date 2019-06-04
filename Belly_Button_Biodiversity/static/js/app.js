@@ -54,10 +54,15 @@ function buildCharts(sample) {
       text: data.otu_labels
     }
     var data1 = [trace1]
+
+    var bubbleHeight = document.getElementById("bubble").offsetHeight;
+
+    var bubbleWidth = document.getElementById("bubble").offsetWidth;
+
     var layout = {
       showlegend: false,
-      height: window.innerHeight * 0.42,
-      width: window.innerWidth * 0.55,
+      height: bubbleHeight,
+      width: bubbleWidth,
       xaxis: {
         title: 'OTU_IDS'
       },
@@ -65,27 +70,128 @@ function buildCharts(sample) {
         title: 'sample_values'
       }
     };
-    Plotly.newPlot("bubble", data1, layout);
+
+    Plotly.newPlot("bubble", data1, layout, {responsive: true});
+
+    window.onresize = function() {
+      Plotly.relayout("bubble", {
+        width: bubbleWidth,
+        height: bubbleHeight
+      })
+    }
+
+
+
+
+
 
     var trace2 = {
         values: data.sample_values.slice(0,10),
         labels: data.otu_ids.slice(0,10),
         hovertext: data.otu_labels.slice(0,10),
         type: 'pie'
+
     };
-    var data2 = [trace2]
+
+    var data2 = [trace2];
+
+    var pieHeight = document.getElementById("pie").offsetHeight;
+
+    var pieWidth = document.getElementById("pie").offsetWidth;
+
     var layout2 = {
       showlegend: true,
-      height: screen.height * 0.3,
-      width: screen.width * 0.4
+      title: "Top 10 Samples",
+      height: pieHeight,
+      width: pieWidth
     };
-    Plotly.newPlot('pie',data2,layout2);
+
+
+    Plotly.newPlot("pie", data2, layout2, {responsive: true});
+
+    window.onresize = function() {
+      Plotly.relayout("pie", {
+        width: pieWidth,
+        height: pieHeight
+      })
+    }
+
+
+
+
+    // (function() {
+    //   var d3 = Plotly.d3;
+      
+    //   var WIDTH_IN_PERCENT_OF_PARENT = 80,
+    //       HEIGHT_IN_PERCENT_OF_PARENT = 80;
+      
+    //   var gd3 = d3.select(document.getElementById("pie"))
+    //       .append('pie')
+    //       .style({
+    //           width: WIDTH_IN_PERCENT_OF_PARENT + '%',
+    //           'margin-left': (100 - WIDTH_IN_PERCENT_OF_PARENT) / 2 + '%',
+      
+    //           height: HEIGHT_IN_PERCENT_OF_PARENT + 'vh',
+    //           'margin-top': (100 - HEIGHT_IN_PERCENT_OF_PARENT) / 2 + 'vh'
+    //       });
+      
+    //   var gd = gd3.node();
+      
+    //   Plotly.newPlot(gd, data2, layout2, {responsive: true});
+      
+    //   window.onresize = function() {
+    //       Plotly.Plots.resize(gd);
+    //   };
+      
+    //   })();
+
+
+
+
   
   })
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function init() {
   // Grab a reference to the dropdown select element
