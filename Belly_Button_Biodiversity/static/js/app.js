@@ -76,6 +76,8 @@ function buildCharts(sample) {
     var data2 = [trace2]
     var layout2 = {
       showlegend: true,
+      height: 500,
+      width: 770
     };
     Plotly.newPlot('pie',data2,layout2);
   
