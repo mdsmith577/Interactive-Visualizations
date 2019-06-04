@@ -56,8 +56,8 @@ function buildCharts(sample) {
     var data1 = [trace1]
     var layout = {
       showlegend: false,
-      height: 600,
-      width: 1200,
+      height: screen.height * 0.42,
+      width: screen.width * 0.55,
       xaxis: {
         title: 'OTU_IDS'
       },
@@ -76,8 +76,8 @@ function buildCharts(sample) {
     var data2 = [trace2]
     var layout2 = {
       showlegend: true,
-      height: 500,
-      width: 770
+      height: screen.height * 0.3,
+      width: screen.width * 0.4
     };
     Plotly.newPlot('pie',data2,layout2);
   

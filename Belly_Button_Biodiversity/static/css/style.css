@@ -17,34 +17,33 @@
 
 
   .panel-body {
-    margin-top: 30px;
+    /* margin-top: 30px; */
     text-align: center;
     display: inline-block;
   }
 
 
-  .pie {
+  #pie {
     border:1px solid transparent;
-    border-radius:100px;
+    border-radius:4;
     -webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);
     box-shadow:0 1px 1px rgba(0,0,0,.05);
+    text-align: center;
+    display: inline-block;
   }
 
 
-  /* #bubble {
-    margin-top: 15px;
-    background: #2a2a7e;
-    height: 630px;
-    width: 1230px;
-    text-align: center;
-    display: inline-block;
-  } */
+
 
   #bubble {
     margin-top: 15px;
-    background: #2a2a7e;
+    /* background: #2a2a7e;
     height: 630px;
-    width: 1230px;
+    width: 1230px; */
     text-align: center;
     display: inline-block;
+    border:1px solid transparent;
+    border-radius:4;
+    -webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);
+    box-shadow:0 1px 1px rgba(0,0,0,.05);
   }
