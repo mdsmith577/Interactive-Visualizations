@@ -11,8 +11,23 @@ function buildMetadata(sample) {
     // Hint: Inside the loop, you will need to use d3 to append new
     // tags for each key-value in the metadata.
 
+    var URL = "/metadata/" + sample;
+
+    var panel = d3.select("#sample-metadata");
+
+    panel.html("");
+
+    d3.json(URL).then(function (data) {
+      Object.entries(data).forEach(([key, value]) => {
+         panel.append("p").text(`${key}: ${value}`)
+    });
+
+
+
+
     // BONUS: Build the Gauge Chart
     // buildGauge(data.WFREQ);
+  });
 }
 
 function buildCharts(sample) {
@@ -24,6 +39,50 @@ function buildCharts(sample) {
     // @TODO: Build a Pie Chart
     // HINT: You will need to use slice() to grab the top 10 sample_values,
     // otu_ids, and labels (10 each).
+
+  var URL = "/samples/" + sample;
+    d3.json(URL).then(function(data){
+
+    var trace1 = {
+      x: data.otu_ids,
+      y: data.sample_values,
+      mode: 'markers',
+      marker: {
+        color: data.otu_ids,
+        size: data.sample_values
+      },
+      text: data.otu_labels
+    }
+    var data1 = [trace1]
+    var layout = {
+      showlegend: false,
+      height: 600,
+      width: 1200,
+      xaxis: {
+        title: 'OTU_IDS'
+      },
+      yaxis: {
+        title: 'sample_values'
+      }
+    };
+    Plotly.newPlot("bubble", data1, layout);
+
+    var trace2 = {
+        values: data.sample_values.slice(0,10),
+        labels: data.otu_ids.slice(0,10),
+        hovertext: data.otu_labels.slice(0,10),
+        type: 'pie'
+    };
+    var data2 = [trace2]
+    var layout2 = {
+      showlegend: true,
+    };
+    Plotly.newPlot('pie',data2,layout2);
+  
+  })
+
+
+
 }
 
 function init() {
