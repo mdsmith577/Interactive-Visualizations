@@ -56,8 +56,8 @@ function buildCharts(sample) {
     var data1 = [trace1]
     var layout = {
       showlegend: false,
-      height: screen.height * 0.42,
-      width: screen.width * 0.55,
+      height: window.innerHeight * 0.42,
+      width: window.innerWidth * 0.55,
       xaxis: {
         title: 'OTU_IDS'
       },
