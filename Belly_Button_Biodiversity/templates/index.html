@@ -20,23 +20,49 @@
                             padding-left: 15px;
                             padding-top: 15px;
                             padding-bottom: 15px;
-        }
+                            margin-left: 0px;
+                            margin-right: 0px;
+                            margin-bottom: 0px;
+                            /* box-sizing: border-box; */
+      }
+      @media only screen and (max-width: 1000px) {
+         #overallPieContainer {
+           margin-left: 15px;
+           margin-right: 15px;
+          }
+      }
       #overallBubbleContainer {background-color: #337ab7;
                               padding-right: 15px;
                               padding-left: 15px;
                               padding-top: 15px;
                               padding-bottom: 15px;
+                              margin-top: 15px;
+                              margin-bottom: 15px;
+                              margin-left: 15px;
+                              margin-right: 15px;
         }
       #topHeader {background-color: #337ab7;
                               padding-right: 15px;
                               padding-left: 15px;
                               padding-top: 15px;
                               padding-bottom: 15px;
+                              margin-bottom: 15px;
+                              /* margin-right: 15px; */
+                              /* margin-left: 15px; */
         }
       #containsText {background-color: #fff;
                      margin-top: 15px;
                      margin-bottom: 15px;
       }
+      #sidepanel-group {margin-right: 0px;
+                        margin-left: 0px;
+      }
+      /* @media (max-width:992px){
+        #overallPieContainer {
+          margin-left: 0px;
+          margin-right: 0px;
+        }
+      } */
 
   </style>
 </head>
@@ -58,7 +84,7 @@
     </div>
     </div>
     <div class="row">
-      <div class="col-md-3">
+      <div id="sidepanel-group" class="col-md-3">
 
 
         <!-- <div class="well">
@@ -92,7 +118,7 @@
 
 
       <div id="overallPieContainer" class="col-md-9 jumbotron text-center">
-        <div class="pie-container">
+        <div id="pie-container">
           <div id="pie"></div>
         </div>
       </div>
@@ -100,7 +126,7 @@
 
 
     <div class="row">
-      <div id="overallBubbleContainer" class="col-xs-12 jumbotron text-center">
+      <div id="overallBubbleContainer" class="col-md-12 jumbotron text-center">
         <div id="bubble-container">
           <div id="bubble"></div> 
         </div>
